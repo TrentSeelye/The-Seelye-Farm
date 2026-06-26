@@ -314,5 +314,137 @@
     }
 
     footer a {
-      color: var
-    
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo">
+          <div class="logo-icon">🌾</div>
+          <div class="logo-text">Seelye Farm</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Welcome to <span>Seelye Farm</span></h1>
+          <p>Discover premium pasture-raised poultry and fresh eggs from our sustainable family farm. We believe in natural farming practices that respect the land and produce the highest quality products.</p>
+          
+          <div class="hero-badges">
+            <span class="badge">🥚 Fresh Eggs Daily</span>
+            <span class="badge">🌱 Pasture-Raised</span>
+            <span class="badge">♻️ Sustainable</span>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn-primary">Order Now</button>
+            <button class="btn-secondary">Learn More</button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="card">
+            <div class="card-title">Farm Stats</div>
+            <div class="card-row">
+              <span class="card-label">Acres</span>
+              <span class="card-value">45</span>
+            </div>
+            <div class="card-row">
+              <span class="card-label">Hens</span>
+              <span class="card-value">200+</span>
+            </div>
+            <div class="card-row">
+              <span class="card-label">Eggs/Week</span>
+              <span class="card-value">1,000+</span>
+            </div>
+            <div class="card-note">Naturally raised with love and care</div>
+          </div>
+          <div class="leaf">🌿</div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-header">
+          <h2>Why Choose Seelye Farm?</h2>
+          <p>We're committed to sustainable, ethical farming practices that benefit both our animals and our community.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-title">🌾 Pasture-Raised</div>
+            <div class="feature-text">Our hens roam freely on open pasture, enjoying a natural diet and lifestyle.</div>
+          </div>
+          <div class="feature">
+            <div class="feature-title">♻️ Sustainable</div>
+            <div class="feature-text">We use organic practices that preserve soil health and protect the environment.</div>
+          </div>
+          <div class="feature">
+            <div class="feature-title">🥚 Premium Quality</div>
+            <div class="feature-text">Fresh, nutrient-rich eggs with vibrant yolks you can taste the difference in.</div>
+          </div>
+          <div class="feature">
+            <div class="feature-title">❤️ Animal Care</div>
+            <div class="feature-text">Our hens are treated with respect and provided excellent living conditions.</div>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <strong>Did You Know?</strong> Pasture-raised eggs contain higher levels of omega-3 fatty acids and vitamins compared to conventional eggs. Our hens get to do what they love—scratch, peck, and enjoy the sunshine!
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>&copy; 2026 Seelye Farm. All rights reserved.</div>
+        <div>
+          <a href="#privacy">Privacy</a> | 
+          <a href="#terms">Terms</a> | 
+          <a href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
