@@ -1,10 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
-</head>
-<body>
-    <h1>Welcome to my site!</h1>
-    <p>Coming soon...</p>
-</body>
-</html>
+  <meta charset="UTF-8">
+  <title>The Seelye Farm | Pasture-Raised Poultry & Fresh Eggs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Seelye Farm offers pasture-raised poultry and fresh eggs with a focus on natural, sustainable farming.">
+  <style>
+    :root {
+      --bg: #f7f4ec;
+      --accent: #8b5e3c;
+      --accent-light: #c9a27b;
+      --text: #2f2f2f;
+      --green: #5b7c4d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--green);
+    }
+
+    .logo-text {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--green);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      padding: 3rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.4rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--green);
+    }
+
+    .hero-text p {
+      max-width: 540px;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .badge {
+      border-radius: 999px;
+      border: 1px solid var(--accent-light);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      background-color: #fff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background-color: var(--green);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: #4a653f;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent-light);
+    }
+
+    .btn-secondary:hover {
+      background-color: #fff;
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 1rem;
+      border: 1px solid #e0d7c7;
+      padding: 1.25rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .card-label {
+      color: #777;
+    }
+
+    .card-value {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .card-note {
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .leaf {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px dashed var(--green);
+      top: 0.4rem;
+      right: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--green);
+      background: rgba(91, 124, 77, 0.06);
+    }
+
+    .section {
+      padding: 2.5rem 0;
+      border-top: 1px solid #e1ddcf;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      max-width: 420px;
+      color: #555;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature {
+      background-color: #fff;
+      border-radius: 0.9rem;
+      border: 1px solid #e0d7c7;
+      padding: 1rem;
+    }
+
+    .feature-title {
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-text {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .highlight {
+      margin-top: 2rem;
+      padding: 1.2rem 1.4rem;
+      border-radius: 0.9rem;
+      background: rgba(91, 124, 77, 0.06);
+      border: 1px dashed var(--green);
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    footer {
+      border-top: 1px solid #ddd;
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: #777;
+      background-color: #fff;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var
+    
